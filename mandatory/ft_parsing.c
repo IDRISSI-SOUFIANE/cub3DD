@@ -6,7 +6,7 @@
 /*   By: sidrissi <sidrissi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/30 15:43:53 by sidrissi          #+#    #+#             */
-/*   Updated: 2025/09/19 21:45:10 by sidrissi         ###   ########.fr       */
+/*   Updated: 2025/09/19 22:30:55 by sidrissi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,7 +64,7 @@ int	ft_parsing(char *map, t_data *data)
 	return (0);
 }
 
-void f()
+void	f()
 {
 	system("leaks cub3D");
 }
@@ -75,7 +75,6 @@ int	main(int ac, char **av)
 	char	**string;
 
 	atexit(f);
-
 	(void)ac;
 	ft_memset(&data, 0, sizeof(t_data));
 	string = men();

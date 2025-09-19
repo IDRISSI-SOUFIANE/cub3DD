@@ -6,7 +6,7 @@
 /*   By: sidrissi <sidrissi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/11 09:54:43 by sidrissi          #+#    #+#             */
-/*   Updated: 2025/09/19 08:12:00 by sidrissi         ###   ########.fr       */
+/*   Updated: 2025/09/19 22:31:51 by sidrissi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -87,7 +87,7 @@ void	move_player(t_data *data)
 	mv.strafe_step = data->player.strafedirection * data->player.walkspeed;
 	mv.new_x = data->player.x;
 	mv.new_y = data->player.y;
-	mv.radius = 15;
+	mv.radius = 4;
 	rotate_player(data);
 	update_position(data, &mv);
 	apply_collision(data, &mv);

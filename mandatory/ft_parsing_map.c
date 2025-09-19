@@ -6,7 +6,7 @@
 /*   By: sidrissi <sidrissi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/07 13:42:47 by oelbied           #+#    #+#             */
-/*   Updated: 2025/09/19 21:22:25 by sidrissi         ###   ########.fr       */
+/*   Updated: 2025/09/19 22:14:46 by sidrissi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,7 +65,7 @@ static char	*skep_spas_line(char *line_reading, int fd, int *i)
 
 char	**copy_tcheck(char **maps, char *line_reading, int fd, int i)
 {
-	int		j;
+	int	j;
 
 	j = 0;
 	line_reading = skep_spas_line(line_reading, fd, &i);
@@ -86,7 +86,7 @@ char	**copy_tcheck(char **maps, char *line_reading, int fd, int i)
 	if (ft_tchking_player(maps, i))
 		return (maps);
 	else
-		return (NULL);
+		return (free_2d_array(maps), NULL);
 }
 
 static char	*skep_spas(char *line_reading, int fd, int *i)
