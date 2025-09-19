@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_parsing_5.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: oelbied <oelbied@student.42.fr>            +#+  +:+       +#+        */
+/*   By: sidrissi <sidrissi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/11 16:34:25 by sidrissi          #+#    #+#             */
-/*   Updated: 2025/09/14 10:17:54 by oelbied          ###   ########.fr       */
+/*   Updated: 2025/09/19 21:36:51 by sidrissi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@ int	found_player(char **map)
 		i++;
 	}
 	if (flag != 1)
-		return (ft_putstr_fd("ERROR: CHECK PLAYER\n", 2), 1);
+		return (1);
 	return (0);
 }
 
@@ -58,9 +58,4 @@ void	free_all(t_data *data)
 		data->map = NULL;
 	}
 	free_v_map(&data->v_map);
-	if (data->v_map._join_map_lines)
-	{
-		free(data->v_map._join_map_lines);
-		data->v_map._join_map_lines = NULL;
-	}
 }

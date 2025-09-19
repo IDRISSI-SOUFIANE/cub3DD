@@ -6,7 +6,7 @@
 /*   By: sidrissi <sidrissi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/30 15:43:37 by sidrissi          #+#    #+#             */
-/*   Updated: 2025/09/18 22:44:04 by sidrissi         ###   ########.fr       */
+/*   Updated: 2025/09/19 17:51:10 by sidrissi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -109,7 +109,6 @@ typedef struct s_vmap
 	char	*ceil;
 	int		n_floor;
 	int		n_ceil;
-	char	*_join_map_lines; // should free() // hadi khasni nhyda lanani mrdmtch biha
 	t_img	north_img;
 	t_img	south_img;
 	t_img	west_img;
@@ -195,7 +194,6 @@ int				found_player(char **_2darray);
 char			**check_map(char **map);
 void			free_all(t_data *data);
 int				ft_tchklast_laine(char *line, char *lineTow, char *linThre);
-int				ft_tcheck_ziro(int lin, int i, int li, char *lineTow);
 int				chick_all_line(char *str);
 int				tchk_fixsed_mapp(char **maps, int contLaien, int j, int i);
 int				init_window(t_data *data);
@@ -223,12 +221,11 @@ unsigned int	get_pixel_color(t_img *img, int x, int y);
 void			my_mlx_pixel_put(t_data *data, int x, int y, int color);
 int				has_wall_at_1337(t_data *data, float x, float y);
 void			free_2d_array(char **arr);
-void			free_all(t_data *data);
 char			**men(void);
 int				has_wall_at(t_data *data, float x, float y);
 int				calculate_height(char **map);
 int				calculate_width(char **map);
-float			distance_bt_points(float x1, float y1, float x2, float y2);
+float			d_bt_points(float x1, float y1, float x2, float y2);
 void			init_hit(t_hit *hit);
 void			choose_hit(t_ray *ray, t_hit horz, t_hit ver);
 t_ray_params	set_horz_params(t_data *data, t_ray *ray, float angle);
@@ -237,5 +234,7 @@ void			get_horz_hit(t_data *data,
 					t_ray *ray, t_ray_params p, t_hit *hit);
 void			get_ver_hit(t_data *data,
 					t_ray *ray, t_ray_params p, t_hit *hit);
-
+int				ft_tchklast_laine(char *line, char *lineTow, char *linThre);
+int				ft_tcheck_ziro_he(int lin, int li, char *lineTow, char *hd);
+int				ft_tcheck_ziro(int lin, int li, char *lineTow);
 #endif

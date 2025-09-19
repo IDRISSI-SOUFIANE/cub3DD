@@ -6,7 +6,7 @@
 /*   By: sidrissi <sidrissi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/30 15:43:53 by sidrissi          #+#    #+#             */
-/*   Updated: 2025/09/18 21:23:12 by sidrissi         ###   ########.fr       */
+/*   Updated: 2025/09/19 21:45:10 by sidrissi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,15 +59,22 @@ int	ft_parsing(char *map, t_data *data)
 		return (1);
 	if (check_first_part(fd, line, count, data))
 	{
-		return (free_v_map(&data->v_map), free(data->v_map._join_map_lines), 1);
+		return (free_v_map(&data->v_map), 1);
 	}
 	return (0);
+}
+
+void f()
+{
+	system("leaks cub3D");
 }
 
 int	main(int ac, char **av)
 {
 	t_data	data;
 	char	**string;
+
+	atexit(f);
 
 	(void)ac;
 	ft_memset(&data, 0, sizeof(t_data));
@@ -77,7 +84,7 @@ int	main(int ac, char **av)
 	if (string == NULL)
 	{
 		return (ft_putstr_fd("ERROR: map not valid!\n", 2),
-			free_2d_array(string), 1);
+			free_2d_array(string), free_all(&data), 1);
 	}
 	data.map = check_map(string);
 	if (NULL == data.map)
@@ -85,6 +92,7 @@ int	main(int ac, char **av)
 			free_all(&data), 1337);
 	if (init_window(&data))
 		return (free_all(&data), ft_putstr_fd("ERROR: init_window!\n", 2), 1);
+	printf("----------------------->here\n");
 	free_all(&data);
 	return (0);
 }

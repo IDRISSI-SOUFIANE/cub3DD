@@ -6,7 +6,7 @@
 /*   By: sidrissi <sidrissi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/11 11:38:13 by sidrissi          #+#    #+#             */
-/*   Updated: 2025/09/18 18:34:07 by sidrissi         ###   ########.fr       */
+/*   Updated: 2025/09/19 17:50:06 by sidrissi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,16 +49,3 @@ void	free_v_map(t_vmap *v_map)
 	if (v_map->ceil)
 		free(v_map->ceil);
 }
-
-// int	p_player(char c)
-// {
-// 	return ((c != 'N' && c != 'S' && c != 'W' && c != 'E'));
-// }
-
-// int	ft_0_1_map(int c)
-// {
-// 	if ((c >= '0' && c <= '1'))
-// 		return (0);
-// 	else
-// 		return (1);
-// }

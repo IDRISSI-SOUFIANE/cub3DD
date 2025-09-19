@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_parsing_map.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: oelbied <oelbied@student.42.fr>            +#+  +:+       +#+        */
+/*   By: sidrissi <sidrissi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/07 13:42:47 by oelbied           #+#    #+#             */
-/*   Updated: 2025/09/14 09:58:21 by oelbied          ###   ########.fr       */
+/*   Updated: 2025/09/19 21:22:25 by sidrissi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ int	ft_tchking_player(char **maps, int contLaien)
 	{
 		if (ft_tchklast_laine(maps[i - 1], maps[i], maps[i + 1]) == 0)
 			return (0);
-		if (maps[i][0] == '0')
+		if (maps[i][0] != ' ' && maps[i][0] != '1')
 			return (0);
 		j = 1;
 		if (tchk_fixsed_mapp(maps, contLaien, j, i) == 0)
